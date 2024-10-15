@@ -1,0 +1,22 @@
+body {
+    margin: 10px 10px 30px 10px;
+}
+
+
+#pass,
+#user,
+#value1,
+#value2,
+#confirmPassword {
+    color: red;
+    display: none;
+}
+
+.input_values {
+    text-align: center;
+    color: #01725a;
+}
+
+#password {
+    -webkit-text-security: disc;
+}

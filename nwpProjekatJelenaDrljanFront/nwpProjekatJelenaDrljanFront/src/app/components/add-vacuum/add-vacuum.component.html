@@ -1,0 +1,13 @@
+<div class="container mt-4">
+    <h1>Add vacuum cleaner</h1>
+    <hr>
+    <div class="justify-content-center align-items-center">
+        <form (ngSubmit)="onSubmit()" [formGroup]="form">
+            <div class="mb-3">
+                <label for="email" class="form-label">Name:</label>
+                <input type="email" class="form-control" id="email" name="email" [formControlName]="'email'"required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+</div>

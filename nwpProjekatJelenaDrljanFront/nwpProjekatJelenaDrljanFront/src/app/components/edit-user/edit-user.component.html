@@ -1,0 +1,77 @@
+<!-- edit-user.component.html -->
+
+<div class="container mt-4">
+    <h2>Edit User</h2>
+    <form (ngSubmit)="onSave()" [formGroup]="form">
+         <!-- Name -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.firstName" [formControlName]="'firstName'" required>
+      </div>
+  
+      <!-- Last Name -->
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="user.lastName" [formControlName]="'lastName'" required>
+      </div>
+  
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" [formControlName]="'email'"required>
+      </div>
+  
+      <!-- Permissions -->
+      <div class="mb-3">
+        <label class="form-label">Permissions:</label>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="create" name="create" [formControlName]="'create'">
+          <label class="form-check-label" for="createe">Create</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="read" name="read" [formControlName]="'read'"> 
+          <label class="form-check-label" for="read">Read</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="update" name="update" [formControlName]="'update'"> 
+          <label class="form-check-label" for="update">Update</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="delete" name="delete" [formControlName]="'delete'"> 
+          <label class="form-check-label" for="delete">Delete</label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Permissions:</label>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="search" name="search" [formControlName]="'search'">
+          <label class="form-check-label" for="search">Search vacuum</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="start" name="start" [formControlName]="'start'"> 
+          <label class="form-check-label" for="start">Start vacuum</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="stop" name="stop" [formControlName]="'stop'"> 
+          <label class="form-check-label" for="stop">Stop vacuum</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="discharge" name="discharge" [formControlName]="'discharge'"> 
+          <label class="form-check-label" for="discharge">Discharge vacuum</label>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="add" name="add" [formControlName]="'add'"> 
+          <label class="form-check-label" for="add">Add vacuum</label>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="remove" name="remove" [formControlName]="'remove'"> 
+          <label class="form-check-label" for="remove">Remove vacuum</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Error History</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Error Message</th>
+          <th>Vacuum Cleaner</th>
+          <th>Operation</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let error of errorHistory">
+          <td>{{ error.error }}</td>
+          <td>{{ error.vacuumId }}</td>
+          <td>{{ error.operation }}</td>
+          <td>{{ error.date | date:'medium' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

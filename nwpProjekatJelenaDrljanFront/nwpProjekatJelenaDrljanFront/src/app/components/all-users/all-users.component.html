@@ -1,0 +1,44 @@
+<div class="container mt-4">
+    <h1>List of users</h1>
+    <hr>
+    <button [routerLink]="['../add']" class="btn btn-primary mb-3">Add New User</button>
+
+    <div class="table-responsive"> <!-- Add responsiveness to the table -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Permissions</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.firstName }}</td>
+                    <td>{{ user.lastName }}</td>
+                    <td>
+                        <ng-container *ngIf="userCanEdit(); else noEdit">
+                            <a [routerLink]="['/users', user.userId, 'edit']" class="btn btn-link">{{ user.email }}</a>
+                        </ng-container>
+                        <ng-template #noEdit>
+                            {{ user.email }}
+                        </ng-template>
+
+                    </td>
+                    <td>{{ user.permissions }}</td>
+                    <td>
+                        <ng-container *ngIf="userCanDelete(); else noDelete">
+                          <a (click)="deleteUser(user.userId)" class="btn btn-link">Delete</a>
+                        </ng-container>
+                        <ng-template #noDelete>
+                          Delete
+                        </ng-template>
+                      </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
